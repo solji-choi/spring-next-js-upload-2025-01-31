@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+  <meta name="next-head-count" content="2">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta content="website" property="og:type">
+  <meta content="카카오계정" property="og:title">
+  <meta content="https://accounts.kakaocdn.net/images/og_kakao.png" property="og:image">
+  <script type="text/javascript" src="//t1.daumcdn.net/tiara/js/v1/tiara.min.js" defer></script>
+  <link rel="preload" href="https://accounts.kakaocdn.net/_next/static/css/4fd63ab283ca531e.css" as="style">
+  <link rel="stylesheet" href="https://accounts.kakaocdn.net/_next/static/css/4fd63ab283ca531e.css" data-n-g="">
+  <link rel="preload" href="https://accounts.kakaocdn.net/_next/static/css/9ae4f112b1d7263a.css" as="style">
+  <link rel="stylesheet" href="https://accounts.kakaocdn.net/_next/static/css/9ae4f112b1d7263a.css" data-n-p="">
+  <link rel="preload" href="https://accounts.kakaocdn.net/_next/static/css/2f1d8a5bd195ff97.css" as="style">
+  <link rel="stylesheet" href="https://accounts.kakaocdn.net/_next/static/css/2f1d8a5bd195ff97.css" data-n-p="">
+  <noscript data-n-css=""></noscript>
+  <script defer nomodule="" src="https://accounts.kakaocdn.net/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/webpack-ce1c84005fac7d10.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/framework-f8115f7fae64930e.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/main-a7d45bce11193232.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/pages/_app-76acd0439c843b1f.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/29107295-f5d3d9a71e7e292a.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/39694-4cf1f4ff8ab2886e.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/69695-9ee32dd2295c9b6f.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/34853-0efce61660864821.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/47490-c5d1eb1235b646df.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/95939-d9150504ab274073.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/5461-fa3639993a4cbbb0.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/3889-cc70298f312e47b4.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/41128-859a6d5e5c65423b.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/78505-7062cce261c96aae.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/chunks/pages/login/login-23025f77df38391d.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/vndbwRRbmSpR0tMSt0FZL/_buildManifest.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/vndbwRRbmSpR0tMSt0FZL/_ssgManifest.js" defer></script>
+  <script src="https://accounts.kakaocdn.net/_next/static/vndbwRRbmSpR0tMSt0FZL/_middlewareManifest.js" defer></script>
+ </head>
+ <body class="os_other pc type_responsive app_view">
+  <div id="__next" data-reactroot=""></div>
+  <script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"pageContext":{"commonContext":{"locale":"ko","uaClass":"os_other  pc","responsiveView":true,"responsivePopup":false,"mobile":false,"webview":{"app":"web","webViewType":"none","appVersion":"","os":"other","osVersion":"","supportNavigation":false,"supportFilePicker":true,"supportExecUrlScheme":false,"supportMarketUrlScheme":true},"supportRefererMetaTag":false,"hasPopupCampaign":false,"showHeader":false,"showFooter":true,"isLogin":false,"linkParams":{"showHeader":"false"},"displayId":null,"isTalkUser":false,"isCorporation":false,"syncUrl":null,"showPasskey":true,"darkMode":null,"_csrf":"fcac9c35-9618-445b-8305-5d470beb4cb2","kage_file_max_size":100,"upload_kage_url":"https://up-api1-kage.kakao.com/up/kaccount-p/","p":"HptDzsDzrDChMW2vwrTdD22u5ZtZMZPRTTovogXcN9E"},"context":{"webType":"web","defaultEmail":null,"showStaySignIn":true,"defaultStaySignIn":false,"appendStaySignedIn":false,"defaultCountryCode":"KR_82","showQrLogin":true,"showWebTalkLogin":false,"showDeviceFormLogin":false,"showPasskeyLogin":true,"needCaptcha":false,"showIpSecurity":false,"loginUrl":"/login?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Fauthorize%3Fscope%3Dprofile_nickname%2520profile_image%26response_type%3Dcode%26state%3DiKdFoLvH5P04HJssjlruS4Rz2nB3xYeXP4CIpnBdElI%253D%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A8080%252Flogin%252Foauth2%252Fcode%252Fkakao%26code_challenge_method%3DS256%26client_id%3Dafd3004c65810f10095c89dcb34eb017%26code_challenge%3DgJ6vc4t041zN0d6PCaBMQMW361z9OF8A1IlubcMthBk%26through_account%3Dtrue","continueUrl":"https://kauth.kakao.com/oauth/authorize?scope=profile_nickname%20profile_image&response_type=code&state=iKdFoLvH5P04HJssjlruS4Rz2nB3xYeXP4CIpnBdElI%3D&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin%2Foauth2%2Fcode%2Fkakao&code_challenge_method=S256&client_id=afd3004c65810f10095c89dcb34eb017&code_challenge=gJ6vc4t041zN0d6PCaBMQMW361z9OF8A1IlubcMthBk&through_account=true","useSimpleLogin":true,"exceedSimpleLoginLimit":false,"defaultSaveSignIn":false,"isTalkLoginError":false,"linkParams":{"lang":["ko"]},"requests":{"check_daum_sso":["get","https://logins.daum.net/accounts/endpoint/favicon.ico"]},"isDaum":false,"banner":null}}}},"page":"/login/login","query":{},"buildId":"vndbwRRbmSpR0tMSt0FZL","assetPrefix":"https://accounts.kakaocdn.net","nextExport":true,"isFallback":false,"gip":true,"scriptLoader":[]}</script>
+ </body>
+</html>
