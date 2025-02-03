@@ -6,6 +6,7 @@ import com.ll.domain.post.post.entity.Post;
 import com.ll.domain.post.post.service.PostService;
 import com.ll.global.app.AppConfig;
 import com.ll.global.app.CustomConfigProperties;
+import com.ll.standard.util.Ut;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
@@ -151,6 +152,10 @@ public class BaseInitData {
                 false,
                 true
         );
+
+        String newFilePath = Ut.file.downloadByHttp("https://picsum.photos/id/237/200/300", AppConfig.getTempDirPath());
+
+        post8.addGenFile("attachment", newFilePath);
 
         IntStream.rangeClosed(9, 100).forEach(
                 i -> postService.write(
