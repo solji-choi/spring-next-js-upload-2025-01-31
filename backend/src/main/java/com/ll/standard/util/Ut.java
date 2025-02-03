@@ -201,6 +201,23 @@ public class Ut {
         public static void delete(String filePath) {
             Files.deleteIfExists(Path.of(filePath));
         }
+
+        public static String getOriginalFileName(String filePath) {
+            return Path.of(filePath).getFileName().toString();
+        }
+
+        public static String getFileExt(String filePath) {
+            String filename = getOriginalFileName(filePath);
+
+            return filename.contains(".")
+                    ? filename.substring(filename.lastIndexOf('.') + 1)
+                    : "";
+        }
+
+        @SneakyThrows
+        public static Long getFileSize(String filePath) {
+            return Files.size(Path.of(filePath));
+        }
     }
 
     public static class cmd {

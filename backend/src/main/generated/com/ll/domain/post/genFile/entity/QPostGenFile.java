@@ -27,13 +27,21 @@ public class QPostGenFile extends EntityPathBase<PostGenFile> {
     //inherited
     public final DateTimePath<java.time.LocalDateTime> createDate = _super.createDate;
 
+    public final StringPath fileExt = createString("fileExt");
+
+    public final StringPath fileName = createString("fileName");
+
     public final StringPath filePath = createString("filePath");
+
+    public final NumberPath<Long> fileSize = createNumber("fileSize", Long.class);
 
     //inherited
     public final NumberPath<Long> id = _super.id;
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> modifyDate = _super.modifyDate;
+
+    public final StringPath originalFileName = createString("originalFileName");
 
     public final com.ll.domain.post.post.entity.QPost post;
 
