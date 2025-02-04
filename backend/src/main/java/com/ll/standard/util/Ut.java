@@ -89,6 +89,8 @@ public class Ut {
     }
 
     public static class file {
+        private static final String ORIGIN_FILE_NAME_SEPARATOR = "--originalFileName_";
+
         private static final Map<String, String> MIME_TYPE_MAP = new LinkedHashMap<>() {{
             put("application/json", "json");
             put("text/plain", "txt");
@@ -146,7 +148,7 @@ public class Ut {
             // 파일명 추출
             String filename = getFilenameFromUrl(url);
 
-            String newFilePath = dirPath + "/" + filename + "." + extension;
+            String newFilePath = dirPath + "/" + UUID.randomUUID() + ORIGIN_FILE_NAME_SEPARATOR + filename + "." + extension;
 
             mv(tempFilePath, newFilePath);
 
@@ -203,7 +205,11 @@ public class Ut {
         }
 
         public static String getOriginalFileName(String filePath) {
-            return Path.of(filePath).getFileName().toString();
+            String originalFileName = Path.of(filePath).getFileName().toString();
+
+            return originalFileName.contains(ORIGIN_FILE_NAME_SEPARATOR)
+                    ? originalFileName.substring(originalFileName.indexOf(ORIGIN_FILE_NAME_SEPARATOR) + ORIGIN_FILE_NAME_SEPARATOR.length())
+                    : originalFileName;
         }
 
         public static String getFileExt(String filePath) {
