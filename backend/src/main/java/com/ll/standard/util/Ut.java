@@ -8,16 +8,15 @@ import lombok.SneakyThrows;
 
 import javax.crypto.SecretKey;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -226,6 +225,29 @@ public class Ut {
         @SneakyThrows
         public static Long getFileSize(String filePath) {
             return Files.size(Path.of(filePath));
+        }
+
+        @SneakyThrows
+        public static void rmDir(String filePath) {
+            Path path = Path.of(filePath);
+
+            if (!Files.exists(path)) return;
+
+            Files.walkFileTree(path, new SimpleFileVisitor<>() {
+                @Override
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                    // 파일 삭제
+                    Files.delete(file);
+                    return FileVisitResult.CONTINUE;
+                }
+
+                @Override
+                public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+                    // 디렉터리 삭제 (내부 파일 삭제 후 실행됨)
+                    Files.delete(dir);
+                    return FileVisitResult.CONTINUE;
+                }
+            });
         }
     }
 
