@@ -31,8 +31,6 @@ public class QPostGenFile extends EntityPathBase<PostGenFile> {
 
     public final StringPath fileName = createString("fileName");
 
-    public final StringPath filePath = createString("filePath");
-
     public final NumberPath<Long> fileSize = createNumber("fileSize", Long.class);
 
     //inherited

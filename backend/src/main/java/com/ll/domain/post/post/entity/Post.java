@@ -128,7 +128,7 @@ public class Post extends BaseTime {
                 });
     }
 
-    public void addGenFile(String typeCode, String filePath) {
+    public PostGenFile addGenFile(String typeCode, String filePath) {
         String originalFileName = Ut.file.getOriginalFileName(filePath);
         String fileExt = Ut.file.getFileExt(filePath);
         String fileName = UUID.randomUUID() + "." + fileExt;
@@ -137,7 +137,6 @@ public class Post extends BaseTime {
         PostGenFile genFile = PostGenFile.builder()
                 .post(this)
                 .typeCode(typeCode)
-                .filePath(filePath)
                 .originalFileName(originalFileName)
                 .fileExt(fileExt)
                 .fileName(fileName)
@@ -145,5 +144,9 @@ public class Post extends BaseTime {
                 .build();
 
         genFiles.add(genFile);
+
+        Ut.file.mv(filePath, genFile.getFilePath());
+
+        return genFile;
     }
 }

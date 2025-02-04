@@ -16,6 +16,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -161,7 +162,9 @@ public class Ut {
         }
 
         @SneakyThrows
-        private static void mv(String oldFilePath, String newFilePath) {
+        public static void mv(String oldFilePath, String newFilePath) {
+            mkdir(Paths.get(newFilePath).getParent().toString());
+
             Files.move(
                     Path.of(oldFilePath),
                     Path.of(newFilePath),
