@@ -131,6 +131,8 @@ public class Post extends BaseTime {
     public PostGenFile addGenFile(String typeCode, String filePath) {
         String originalFileName = Ut.file.getOriginalFileName(filePath);
         String fileExt = Ut.file.getFileExt(filePath);
+        String fileExtTypeCode = Ut.file.getFileExtTypeCodeFromFileExt(fileExt);
+        String fileExtType2Code = Ut.file.getFileExtType2CodeFromFileExt(fileExt);
         String fileName = UUID.randomUUID() + "." + fileExt;
         Long fileSize = Ut.file.getFileSize(filePath);
 
@@ -140,6 +142,8 @@ public class Post extends BaseTime {
                 .originalFileName(originalFileName)
                 .fileDateDir(Ut.date.getCurrentDateFormatted("yyyy_MM_dd"))
                 .fileExt(fileExt)
+                .fileExtTypeCode(fileExtTypeCode)
+                .fileExtType2Code(fileExtType2Code)
                 .fileName(fileName)
                 .fileSize(fileSize)
                 .build();
