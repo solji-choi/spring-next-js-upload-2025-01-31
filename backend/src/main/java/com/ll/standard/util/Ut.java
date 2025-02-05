@@ -17,6 +17,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -27,6 +28,10 @@ public class Ut {
     public static class str {
         public static boolean isBlank(String str) {
             return str == null || str.trim().isEmpty();
+        }
+
+        public static String lcfirst(String str) {
+            return Character.toLowerCase(str.charAt(0)) + str.substring(1);
         }
     }
 
@@ -281,6 +286,13 @@ public class Ut {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public static class date {
+        public static String getCurrentDateFormatted(String pattern) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+            return simpleDateFormat.format(new Date());
         }
     }
 }

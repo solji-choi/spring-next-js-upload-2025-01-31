@@ -27,6 +27,8 @@ public class QPostGenFile extends EntityPathBase<PostGenFile> {
     //inherited
     public final DateTimePath<java.time.LocalDateTime> createDate = _super.createDate;
 
+    public final StringPath fileDateDir = createString("fileDateDir");
+
     public final StringPath fileExt = createString("fileExt");
 
     public final StringPath fileName = createString("fileName");
