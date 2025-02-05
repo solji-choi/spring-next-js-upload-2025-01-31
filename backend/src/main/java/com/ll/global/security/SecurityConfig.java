@@ -29,8 +29,6 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/h2-console/**")
-                                .permitAll()
                                 .requestMatchers(HttpMethod.GET, "/api/*/posts/{id:\\d+}", "/api/*/posts", "/api/*/posts/{postId:\\d+}/comments")
                                 .permitAll()
                                 .requestMatchers("/api/*/members/login", "/api/*/members/logout","/api/*/members/join")
