@@ -42,6 +42,8 @@ public class QPostGenFile extends EntityPathBase<PostGenFile> {
     //inherited
     public final NumberPath<Long> id = _super.id;
 
+    public final StringPath metadata = createString("metadata");
+
     //inherited
     public final DateTimePath<java.time.LocalDateTime> modifyDate = _super.modifyDate;
 

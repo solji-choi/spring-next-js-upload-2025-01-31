@@ -11,10 +11,8 @@ import com.ll.standard.util.Ut;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Entity
 @Getter
@@ -136,10 +134,19 @@ public class Post extends BaseTime {
         String fileName = UUID.randomUUID() + "." + fileExt;
         Long fileSize = Ut.file.getFileSize(filePath);
 
+        Map<String, Object> metadata = Ut.file.getMetadata(filePath);
+
+        String metadataStr = metadata
+                .entrySet()
+                .stream()
+                .map(entry -> entry.getKey() + "-" + entry.getValue())
+                .collect(Collectors.joining(";"));
+
         PostGenFile genFile = PostGenFile.builder()
                 .post(this)
                 .typeCode(typeCode)
                 .originalFileName(originalFileName)
+                .metadata(metadataStr)
                 .fileDateDir(Ut.date.getCurrentDateFormatted("yyyy_MM_dd"))
                 .fileExt(fileExt)
                 .fileExtTypeCode(fileExtTypeCode)
