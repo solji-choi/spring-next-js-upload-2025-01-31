@@ -232,26 +232,30 @@ public class Ut {
         }
 
         @SneakyThrows
-        public static void rmDir(String filePath) {
+        public static void rm(String filePath) {
             Path path = Path.of(filePath);
 
             if (!Files.exists(path)) return;
 
-            Files.walkFileTree(path, new SimpleFileVisitor<>() {
-                @Override
-                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-                    // 파일 삭제
-                    Files.delete(file);
-                    return FileVisitResult.CONTINUE;
-                }
+            if(Files.isRegularFile(path)) {
+                Files.delete(path);
+            } else {
+                Files.walkFileTree(path, new SimpleFileVisitor<>() {
+                    @Override
+                    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                        // 파일 삭제
+                        Files.delete(file);
+                        return FileVisitResult.CONTINUE;
+                    }
 
-                @Override
-                public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
-                    // 디렉터리 삭제 (내부 파일 삭제 후 실행됨)
-                    Files.delete(dir);
-                    return FileVisitResult.CONTINUE;
-                }
-            });
+                    @Override
+                    public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+                        // 디렉터리 삭제 (내부 파일 삭제 후 실행됨)
+                        Files.delete(dir);
+                        return FileVisitResult.CONTINUE;
+                    }
+                });
+            }
         }
 
         public static String getFileExtTypeCodeFromFileExt(String ext) {

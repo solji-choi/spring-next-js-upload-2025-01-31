@@ -40,7 +40,7 @@ public class BaseInitData {
         if (memberService.count() > 0) return;
 
         if (AppConfig.isTest()) {
-            Ut.file.rmDir(AppConfig.getGenFileDirPath());
+            Ut.file.rm(AppConfig.getGenFileDirPath());
         }
 
         Member memberSystem = memberService.join("system", "1234", "시스템", "");
@@ -162,6 +162,11 @@ public class BaseInitData {
 
         String genFile21FilePath = Ut.file.downloadByHttp("https://picsum.photos/id/238/200/300", AppConfig.getTempDirPath());
         post8.addGenFile("attachment", genFile21FilePath);
+
+        String genFile31FilePath = Ut.file.downloadByHttp("https://picsum.photos/id/239/500/500", AppConfig.getTempDirPath());
+        post8.addGenFile("thumbnail", genFile31FilePath);
+
+        post8.deleteGenFile("attachment", 2);
 
         IntStream.rangeClosed(9, 100).forEach(
                 i -> postService.write(
