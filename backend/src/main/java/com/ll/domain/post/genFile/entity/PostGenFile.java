@@ -11,6 +11,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+
 @Entity
 @Getter
 @Builder
@@ -33,5 +35,22 @@ public class PostGenFile extends BaseTime {
 
     public String getFilePath() {
         return AppConfig.getGenFileDirPath() + "/" + getModelName() + "/" + typeCode + "/" + fileDateDir + "/" + fileName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(id != null) return  super.equals(0);
+
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        PostGenFile genFile = (PostGenFile) o;
+        return fileNo == genFile.fileNo && Objects.equals(typeCode, genFile.typeCode);
+    }
+
+    @Override
+    public int hashCode() {
+        if(id != null) return super.hashCode();
+
+        return Objects.hash(super.hashCode(), typeCode, fileNo);
     }
 }
