@@ -22,38 +22,51 @@ public class QPostGenFile extends EntityPathBase<PostGenFile> {
 
     public static final QPostGenFile postGenFile = new QPostGenFile("postGenFile");
 
-    public final com.ll.global.jpa.entity.QBaseTime _super = new com.ll.global.jpa.entity.QBaseTime(this);
+    public final com.ll.domain.base.genFile.genFile.entity.QGenFile _super = new com.ll.domain.base.genFile.genFile.entity.QGenFile(this);
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> createDate = _super.createDate;
 
-    public final StringPath fileDateDir = createString("fileDateDir");
+    //inherited
+    public final StringPath fileDateDir = _super.fileDateDir;
 
-    public final StringPath fileExt = createString("fileExt");
+    //inherited
+    public final StringPath fileExt = _super.fileExt;
 
-    public final StringPath fileExtType2Code = createString("fileExtType2Code");
+    //inherited
+    public final StringPath fileExtType2Code = _super.fileExtType2Code;
 
-    public final StringPath fileExtTypeCode = createString("fileExtTypeCode");
+    //inherited
+    public final StringPath fileExtTypeCode = _super.fileExtTypeCode;
 
-    public final StringPath fileName = createString("fileName");
+    //inherited
+    public final StringPath fileName = _super.fileName;
 
-    public final NumberPath<Integer> fileNo = createNumber("fileNo", Integer.class);
+    //inherited
+    public final NumberPath<Integer> fileNo = _super.fileNo;
 
-    public final NumberPath<Integer> fileSize = createNumber("fileSize", Integer.class);
+    //inherited
+    public final StringPath filePath = _super.filePath;
+
+    //inherited
+    public final NumberPath<Integer> fileSize = _super.fileSize;
 
     //inherited
     public final NumberPath<Long> id = _super.id;
 
-    public final StringPath metadata = createString("metadata");
+    //inherited
+    public final StringPath metadata = _super.metadata;
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> modifyDate = _super.modifyDate;
 
-    public final StringPath originalFileName = createString("originalFileName");
+    //inherited
+    public final StringPath originalFileName = _super.originalFileName;
 
     public final com.ll.domain.post.post.entity.QPost post;
 
-    public final StringPath typeCode = createString("typeCode");
+    //inherited
+    public final StringPath typeCode = _super.typeCode;
 
     public QPostGenFile(String variable) {
         this(PostGenFile.class, forVariable(variable), INITS);

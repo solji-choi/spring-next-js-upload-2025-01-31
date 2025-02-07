@@ -10,6 +10,7 @@ import com.ll.standard.base.Empty;
 import com.ll.standard.util.Ut;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -17,9 +18,8 @@ import java.util.stream.Collectors;
 @Entity
 @Getter
 @Setter
-@Builder
+@SuperBuilder
 @NoArgsConstructor
-@AllArgsConstructor
 public class Post extends BaseTime {
     @ManyToOne(fetch = FetchType.LAZY)
     private Member author;

@@ -4,22 +4,22 @@ import com.ll.standard.util.Ut;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Getter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@SuperBuilder
+@NoArgsConstructor
 @MappedSuperclass
 public class BaseEntity {
     @Id
     @GeneratedValue(strategy = IDENTITY) // AUTO_INCREMENT
     @Setter(AccessLevel.PROTECTED)
     @EqualsAndHashCode.Include
-    protected Long id;
+    private Long id;
 
     public String getModelName() {
         String simpleName = this.getClass().getSimpleName();
